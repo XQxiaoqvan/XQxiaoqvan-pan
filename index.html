@@ -1,39 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ZH-cn">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="css/login.css">
+    <!-- FontAwesome -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <title>个人云盘 | 登录</title>
 </head>
 
 <body>
+    <!-- 背景 -->
     <div class="background">
-        <video src="path/to/video.mp4" autoplay loop></video>
+        <video autoplay muted loop>
+            <source src="https://webstatic.mihoyo.com/upload/op-public/2023/02/23/5e355dea3eaf1f31ea497d5703b0c505_2947932349865370574.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
-
+    <!-- 背景END -->
+    <!-- 顶部栏 -->
     <div class="header">
-        <img class="logo-img" src="path/to/logo.png" alt="Logo">
-        <h1 class="header-text">Welcome to our website</h1>
+        <div class="logo">
+            <img class="logo-img" src="img/tx.jpg" alt="Logo">
+        </div>
+        <div class="header-text">
+            <h1>xiaoqvan的云盘</h1>
+        </div>
     </div>
-
+    <!-- 顶部栏END -->
+    <!-- 登录页面 -->
     <div class="login">
-        <h1>Login</h1>
-        <div class="login-username">
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username">
-        </div>
-        <div class="login-password">
-            <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password">
-        </div>
-        <div class="login-button">
-            <button type="submit">Login</button>
-        </div>
+        <h1>登录</h1>
+        <form id="loginForm">
+            <div class="login-username">
+                <input type="text" id="username" name="username" placeholder="用户名" required>
+                <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="login-password">
+                <input type="password" id="password" name="password" placeholder="密码" required>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="login-button">
+                <button type="submit">登录</button>
+            </div>
+        </form>
     </div>
-
-    <script src="path/to/fontawesome.js"></script>
+    <!-- 登录END -->
+    <script src="js/login.js"></script>
+    <script src="js/set.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,164 @@
+/* 引用外部字体 */
+
+@font-face {
+    font-family: Pacifico;
+    src: url('../font/Pacifico-Regular.ttf') format('truetype');
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 背景部分 */
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 背景部分END */
+
+
+/* 顶部标题部分 */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .8);
+    box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, .64);
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    margin-left: 5px;
+    /* 左边距 */
+    margin-right: 5px;
+    /* 右边距 */
+}
+
+.logo-img {
+    float: left;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: 5px;
+    /* 左边距 */
+    margin-right: 10px;
+    /* 右边距 */
+}
+
+.header-text {
+    text-align: left;
+    font-family: Pacifico, cursive;
+    font-size: 10px;
+    /* 调整字体大小为您想要的大小，例如24像素 */
+}
+
+
+/* 顶部标题END */
+
+
+/* 登录界面 */
+
+.login {
+    max-width: 300px;
+    /* 调整最大宽度 */
+    margin: 0 auto;
+    padding: 100px;
+    /* 调整内边距 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 设置背景颜色为黑色并且透明度为0.5 */
+    border: 2px solid #fff;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    padding-top: 50px;
+    /* 添加适当的值 */
+}
+
+.login h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    margin-top: 0em;
+    /* 调整上边距 */
+}
+
+.login-username,
+.login-password {
+    position: relative;
+}
+
+.login-username input {
+    padding-left: 30px;
+    /* 调整输入框的左内边距，以给图标留出空间 */
+}
+
+.login-username i {
+    position: absolute;
+    left: 10px;
+    /* 调整图标的位置 */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.login-username input[type="text"],
+.login-password input[type="password"] {
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 10px;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+
+.login-password i,
+.login-username i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    /* 设置图标颜色为白色 */
+}
+
+.login-username input::placeholder,
+.login-password input::placeholder {
+    color: white;
+}
+
+.login-button button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    color: transparent;
+    border: none;
+    border-radius: 50px;
+    color: #000000
+}
+
+.login-button button[type="submit"]:hover {
+    border-color: #ffffff;
+    /* 将描边颜色设置为白色 */
+}
+
+
+/* 登录界面END */
