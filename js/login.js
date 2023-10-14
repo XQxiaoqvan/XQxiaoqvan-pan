@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     var password = document.getElementById('password').value;
 
     if (username !== 'xiaoqvan') {
-        alert('用户名不正确！');
+        alert('用户名或密码错误！');
         return;
     }
 
@@ -19,7 +19,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         alert('登录成功！');
         window.location.href = 'https://pan.xiaoqvan.top/admin';
     } else {
-        alert('密码错误！');
+        alert('用户名或密码错误！');
         // 清除认证信息
         document.cookie = 'xqhtToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=Strict';
     }
