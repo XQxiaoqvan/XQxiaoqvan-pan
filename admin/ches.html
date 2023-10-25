@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ZH-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    <title>管理页面</title>
+</head>
+
+<body>
+    <div class="background">
+        <img src="https://link.jscdn.cn/sharepoint/aHR0cHM6Ly9tZW5taWFvY3ktbXkuc2hhcmVwb2ludC5jb20vOnU6L3AveGlhb3F2YW5fMzY1L0VVOUMwbllCSGR0RnJfT1dmMnRJTjNvQktHajFpT2JqS3dvTVFzSjJqT1Ruenc_ZT1qd0JCeTg.webp">
+    </div>
+    <div class="dingbu">
+        <div class="logol">
+            <img src="https://menmiaocy-my.sharepoint.com/personal/xiaoqvan_365_menmiaocy_com/_layouts/15/images/odbfavicon.ico?rev=47">
+            <h1 class="onedrivetext">OneDrive</h1>
+        </div>
+        <div class="tx">
+            <img src="https://menmiaocy-my.sharepoint.com/personal/xiaoqvan_365_menmiaocy_com/Documents/%e5%9b%be%e6%ba%90/tx.jpg?ga=1">
+        </div>
+    </div>
+    <div class="neirong">
+        <div class="daohang">
+            <h1>主页</h1>
+            <h1>云盘</h1>
+            <h1>设置</h1>
+        </div>
+        <div class="zhuyao"> </div>
+    </div>
+    <div id="popupContainer"></div>
+    <script src="../js/verify.js"></script>
+    <script>
+        // 获取指定的tx div元素
+        var txDiv = document.querySelector('.tx');
+        var popupDiv;
+
+        // 添加鼠标点击事件监听器
+        txDiv.addEventListener('click', function(event) {
+            event.stopPropagation(); // 阻止事件冒泡
+
+            // 如果已经存在一个弹出框，就先移除它
+            if (popupDiv) {
+                popupDiv.remove();
+            }
+
+            // 创建弹出框div
+            popupDiv = document.createElement('div');
+            popupDiv.classList.add('popup');
+
+            // 创建按钮元素
+            var button = document.createElement('button');
+            button.textContent = '注销';
+            button.classList.add('logout-button'); // 添加类
+
+            // 将按钮添加到弹出框div中
+            popupDiv.appendChild(button);
+
+            // 设置弹出框div的位置
+            var txDivRect = txDiv.getBoundingClientRect();
+            popupDiv.style.position = 'absolute';
+            popupDiv.style.top = txDivRect.bottom + 'px';
+            popupDiv.style.width = '200px'; // 设置弹出框的宽度
+            popupDiv.style.left = (txDivRect.right - parseInt(popupDiv.style.width)) + 'px'; // 弹出框的左边界为txDiv的右边界减去弹出框的宽度
+
+            // 如果弹出框的右边界超出了网页的宽度，就将弹出框的左边界向左移动相应的距离
+            var popupRight = parseInt(popupDiv.style.left) + parseInt(popupDiv.style.width);
+            var pageWidth = window.innerWidth;
+            if (popupRight > pageWidth) {
+                popupDiv.style.left = (parseInt(popupDiv.style.left) - (popupRight - pageWidth)) + 'px';
+            }
+
+            // 添加弹出框div到body中
+            document.body.appendChild(popupDiv);
+
+            // 添加按钮点击事件处理程序
+            button.addEventListener('click', function() {
+                // 运行指定的JavaScript代码
+                localStorage.removeItem('xqhtToken');
+                localStorage.removeItem('xqhtTokenExpiration');
+            });
+        });
+
+        // 添加全局点击事件监听器
+        document.addEventListener('click', function() {
+            if (popupDiv) {
+                popupDiv.remove();
+                popupDiv = null;
+            }
+        });
+    </script>
+</body>
+
+</html>

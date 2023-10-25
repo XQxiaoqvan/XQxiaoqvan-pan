@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
     <title>管理页面</title>
     <style>
         body {
@@ -14,9 +15,17 @@
 </head>
 
 <body>
-    <h1>欢迎访问管理页面</h1>
-    <p>这是一个受保护的页面。</p>
-    <!-- 检测是否登录成功 -->
+    <header>
+        <h1>个人网盘</h1>
+    </header>
+    <div class="container">
+        <ul class="file-list">
+            <li><a href="#">文件1.txt</a></li>
+            <li><a href="#">文件2.docx</a></li>
+            <li><a href="#">文件3.pdf</a></li>
+            <!-- 添加更多文件 -->
+        </ul>
+    </div>
     <script src="../js/verify.js"></script>
 </body>
 
